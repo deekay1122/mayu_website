@@ -87,31 +87,11 @@
     animation: show 0.3s linear 0s;
 }
 
-/* Body */
-
-.body {
-    margin-left: 10%;
-    margin-right: 10%;
-}
-
 /* Message */
 .message {
     margin-bottom: 50px;
     text-align: center;
 }
-
-/* Header */
-
-/* .header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.header img{
-    max-width: 100%;
-    max-height: auto;
-} */
 
 /* Shop */
 

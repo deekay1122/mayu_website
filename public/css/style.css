@@ -1,0 +1,503 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Caveat', sans-serif;
+    font-size: 4vh;
+}
+
+:root {
+    --main-boarder-color:  #696867d5;
+    --main-background-color: rgb(255, 255, 255);
+    --main-white-font-color: rgb(240, 235, 235);
+    --main-black-font-color: rgb(41, 39, 39);
+    --main-span-color: antiquewhite;
+}
+
+
+/* Navigation bar */
+
+.navigation_container {
+    display: flex;
+    height: 100px;
+    align-items: center;
+    justify-items: center;
+    overflow: hidden;
+    /* position: fixed; */
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-left: 3%;
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    margin-left: auto;
+    margin-right: 3%;
+}
+
+.menu_list {
+    margin: auto;
+    /* background-color: blue; */
+    display: flex;
+    list-style: none;
+}
+
+.menu_list li {
+    margin-left: 25px;
+}
+
+.menu_list a {
+    text-decoration: none;
+    color: var(--main-black-font-color);
+}
+
+.menu_list span {
+    border: var(--main-boarder-color) 1px solid;
+    border-radius: 3px;
+    padding: 2px;
+}
+
+/* User Management */
+
+#userManagement > .dropdown {
+    position: absolute;
+    display: none;
+}
+
+#userManagement > .dropdown > .dropdownMargin {
+    margin-top: 10px;
+    margin-left: 0px;
+    background-color: lightgray;
+}
+
+#userManagement > .dropdown > .dropdownMargin > a {
+    display: block;
+    text-decoration: none;
+    padding: 5px;
+    color: var(--main-black-font-color);
+}
+
+#userManagement:hover > .dropdown {
+    display: block;
+    animation: show 0.3s linear 0s;
+}
+
+/* Body */
+
+.body {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+/* Message */
+.message {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+/* Header */
+
+/* .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header img{
+    max-width: 100%;
+    max-height: auto;
+} */
+
+/* Shop */
+
+.products_div {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.products_div .product {
+    border: var(--main-boarder-color) 1px solid;
+    max-width: 250px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 15px;
+}
+
+/* Mayu Welcome Page */
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    font-size: 3vh;
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    justify-content: center;
+  }
+  
+  .header {
+    padding: 10px;
+    flex: 50%;
+  }
+  
+  .m-o-s {
+    padding: 20px;
+    flex: 50%;
+    float: left;
+    font-size: 3vh;
+    color: thistle;
+    
+  }
+  .m-o-s h1{
+    margin-top: 20%;
+    margin-bottom: 10%;
+    font-size: 3vh;
+    color: thistle;
+    border-style: solid;
+    border-width: thin;
+    padding: 20px;
+    width: 50%;
+    text-align: center;
+    margin-left: 25%;
+  }
+  .about p
+  {
+      margin: 0 auto;
+      border-bottom: solid 1px;
+      width: 75%;
+      font-size: 3vh;
+      color: thistle;
+      margin-top: 0%;
+      padding: 20px;
+  }
+  /* Responsive layout - makes a one column-layout instead of two-column layout */
+  @media (max-width: 800px) {
+    .flex-container {
+      flex-direction: column;
+   }
+  }
+  /* Create three equal columns that floats next to each other */
+  .column {
+    text-align: center;
+    margin: auto;
+    display: center;
+    float: left;
+    width: 33.33%;
+    padding: 0px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+  .row{
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+  }
+  .about-mayu{
+    margin-top: 150px;
+    display: block; 
+    margin: 0 auto; 
+    color: thistle;
+    padding: 10px;
+    text-align: center;
+    width: 33.33%;
+      padding: 10px;
+      height: 300px; 
+  }
+  .about-mayu h2{
+    border-bottom:1px solid thistle;
+    font-size: 3vh;
+  }
+  .about-mayu p{
+    font-size: 3vh;
+    }
+    .list-unstyled {
+      padding-left: 0;
+      list-style: none;
+    }
+    .list-inline li {
+      display: inline-block;
+      padding-left: 0px;
+    }
+    .social-icons .fa-youtube-play
+    {
+      font-size: 1.2em;
+      color: white;
+      line-height: 30px;
+      text-align: center;
+      height: 30px;
+      width: 50px;
+      background-color: thistle;
+      border-radius: 40px/50px;
+    }
+    .social-icons .fa-instagram
+  {
+      font-size: 1.2em;
+    color: thistle;
+    line-height: 30px;
+      text-align: center;
+    height: 30px;
+    width: 50px;
+    background-color: white;
+    border-radius: 40px/50px;
+    
+  }
+  .fa:hover, .fa:active {
+      -webkit-transform: scale(1.1) rotate(360deg);
+      -moz-transform: scale(1.1) rotate(360deg);
+      -ms-transform: scale(1.1) rotate(360deg);
+      -o-transform: scale(1.1) rotate(360deg);
+      transform: scale(1.1) rotate(360deg);
+  }
+  .avatar{
+    text-align: center;
+  }
+  .avatar img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
+  .center {
+    text-align: center;
+    margin: auto;
+    margin-top: 30px;
+    width: 60%;
+    border: 1px solid thistle;
+    background-color: thistle;
+    padding: 10px;
+  }
+  /* GALLERY SAMPLE */
+  
+  .card {
+    min-width: 300px;
+    height: 56vh;
+    border: 2px solid thistle;
+    z-index:200;
+    margin:10px;
+    cursor:pointer;
+    transition: all .25s ease;
+  
+  }
+  
+  .card:hover { 
+    transform:translate(0, -10px);
+    box-shadow: 0px 17px 35px 0px rgba(0,0,0,.07);
+  }
+  .card .card-text {
+    padding: 10px;
+  }
+  .card h2{
+    text-align: center;
+    font-family: 'Caveat';
+    font-size: 1.2em;
+  }
+  p {
+    font-size: .9rem;
+    opacity: .6;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .card .card-img {
+    transform: translate(90px,-10px);
+    margin: 10px 30px;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    transition: all .35s ease-out;
+  }
+  
+  .card img {
+    height:150px;
+    margin-top: 30px;
+    margin-right: 250px; margin-left: 50px;
+  }
+  
+  .card img.blur {
+    position:absulute;
+    filter:blur(15px);
+    z-index:-1;
+    opacity:.40;
+    transform: translate(-160px,30px);
+    transition: all .35s ease-out;
+  }
+  
+  .card:hover .card-img { 
+    transform:translate(70px,-15px);
+  }
+  
+  .card:hover .card-img img.blur {
+    transform:translate(-100px,35px) scale(.85);
+    opacity:.25;
+    filter:blur(20px);
+  }
+  
+  .card-content {
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    width:48%;
+    overflow:auto;
+    padding-top: 0px;
+    padding-left:47px;
+    padding-right: 47px;
+    scroll-behavior:smooth;
+  }
+  
+  .card-content::-webkit-scrollbar {
+     height:0px;
+  }
+  
+  .card-content:after {
+    content:'';
+    display:block;
+    min-width:80px;
+    height:0px;
+    position:relative;
+  }
+  
+  .btn{
+    text-align: center;
+    min-width:100px;
+    margin:auto 30px;
+    padding: 15px;
+    height: 56vh;
+    width: 100px;
+    border:1px solid thistle;
+    background:#fff;
+    outline:none;
+    cursor:pointer;
+    z-index:9999;
+    transition: all .25s ease;
+  }
+  
+  .btn:hover{
+    box-shadow: none;
+  }
+  
+  .btn i {
+    font-size:1.2rem;
+    border: 1px solid thistle;
+    border-radius: 50%;
+    text-decoration: none;
+    display: inline-block;
+    padding: 20px 30px;
+  
+  }
+  
+  .slider {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+   
+    width:100%;
+    height:85vh;
+    overflow:hidden;
+  }
+  
+  .slider:after {
+    content:'';
+    left:50px;
+    height:90vh;
+    position:absolute;
+    width:100px;
+    z-index:100;
+    background: none;
+    pointer-events:none;
+  }
+  
+  .slider:before {
+    content:'';
+    right:50px;
+    height:90vh;
+    position:absolute;
+    width:100px;
+    z-index:100;
+    background: none;
+    pointer-events:none;
+  }
+  .fa-angle-left{
+    color: grey;
+    font-size: 1em;
+    border: 1px solid grey;
+    border-radius: 50%;
+    padding:20px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-left: 11.5px;
+  }
+  /* ENd OF GALLERY SLIDESHOW  */
+  .center-2 {
+    text-align: center;
+    border-radius: 10px 10px 10px 10px;
+    margin: auto;
+    margin-top: 30px;
+    width: 60%;
+    border: 1px solid thistle;
+    padding: 5px;
+  }
+  /******************************
+  PLAY-BUTTON
+  ******************************/
+  .play-button {
+    margin-left: 20%;
+    margin-right: 20%;
+    color: grey;
+    text-align: center;
+  }
+  .play-button a {
+    border-radius:50%
+    }
+  .play-button a:hover{
+      text-shadow: 0px 0px 10px yellow;
+  }
+  .fa-play{
+    margin-left: 30px;
+    color: grey;
+    font-size: 1em;
+    border: 1px solid grey;
+    border-radius: 50%;
+    padding:10px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-left: 11.5px;
+  }
+  /* END OF PLAY-BUTTON */
+  .center-3 {
+    text-align: center;
+    margin: auto;
+    margin-top: 30px;
+    width: 60%;
+    border: 1px solid thistle;
+    background-color: thistle;
+    padding: 5px;
+  }
+  
+  footer a{
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid white;
+    border-bottom-width: thin;
+  }
+  footer ul {
+    list-style: none;
+  }
+  

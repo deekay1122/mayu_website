@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\OnlineSalonController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +32,7 @@ Route::get('/shop/remove_from_cart/{id}', [ShopController::class, 'removeFromCar
 Route::get('/shop/cart', [ShopController::class, 'showCart']);
 Route::get('/shop/checkout', [ShopController::class, 'showCheckout'])->middleware('auth');
 Route::get('/store_order', [ShopController::class, 'storeOrder'])->middleware('auth');
+
+Route::get('/online_salon', [OnlineSalonController::class, 'showOnlineSalon']);
+Route::get('/online_salon/createProduct', [OnlineSalonController::class, 'createProduct']);
+Route::post('online_salon/webhook', [OnlineSalonController::class, 'paypalSubscriptionListener']);

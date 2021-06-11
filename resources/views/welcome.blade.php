@@ -139,18 +139,18 @@
     </div>
 </div>
 
-    <div class="center-3">
-        <div class="footer">
-            <footer> 
-                <ul>
-                    <li><a href="#">mayu official site</a></li>
-                </ul>
-                <p>Lorem, ipsum dolor __ Lorem, ipsum</p>
-                <small><p> 2021&copy;mayu</p></small>
-            </footer> 
-        </div>
+<div class="center-3">
+    <div class="footer">
+        <footer> 
+            <ul>
+                <li><a href="#">mayu official site</a></li>
+            </ul>
+            <p>Lorem, ipsum dolor __ Lorem, ipsum</p>
+            <small><p> 2021&copy;mayu</p></small>
+        </footer> 
     </div>
-{{-- </div> --}}
+</div>
+
 <script src=js/script.js></script>
 
 @endsection

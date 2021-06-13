@@ -43,6 +43,6 @@ class OnlineSalonController extends Controller
     }
 
     public function paypalSubscriptionWebhookListener() {
-        dd('Hi I am in webhook listener');
+        echo "Hi, im in webhook listener";
     }
 }

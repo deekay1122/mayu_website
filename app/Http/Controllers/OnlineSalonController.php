@@ -43,6 +43,6 @@ class OnlineSalonController extends Controller
     }
 
     public function paypalSubscriptionWebhookListener(Request $request) {
-        echo $request->links;
+        echo $request->resource->id;
     }
 }

@@ -42,7 +42,7 @@ class OnlineSalonController extends Controller
         $planId = "P-6B585188B5055922YMDCYACY";
     }
 
-    public function paypalSubscriptionWebhookListener() {
-        echo "Hi, im in webhook listener";
+    public function paypalSubscriptionWebhookListener(Request $request) {
+        echo $request->body;
     }
 }

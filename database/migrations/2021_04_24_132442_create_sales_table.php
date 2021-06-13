@@ -19,6 +19,7 @@ class CreateSalesTable extends Migration
             $table->string('payerId');
             $table->string('paymentId');
             $table->string('productId');
+            $table->string('subscriptionId');
             $table->integer('price');
             $table->timestamps();
         });

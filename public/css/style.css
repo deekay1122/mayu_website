@@ -470,6 +470,17 @@
     background-color: thistle;
     padding: 5px;
   }
+
+  /* Online Salon */
+
+  .paypal_subscription_container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .paypal_subscription {
+    width: 300px;
+  }
   
   footer a{
     color: white;

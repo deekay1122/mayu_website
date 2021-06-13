@@ -37,7 +37,6 @@ Route::get('/store_order', [ShopController::class, 'storeOrder'])->middleware('a
 
 Route::get('/online_salon', [OnlineSalonController::class, 'showOnlineSalon']);
 Route::get('/online_salon/createProduct', [OnlineSalonController::class, 'createProduct']);
-Route::post('online_salon/webhook', [OnlineSalonController::class, 'paypalSubscriptionListener']);
 
 // email
 Route::get('/email/verify', function () {
@@ -47,7 +46,7 @@ Route::get('/email/verify', function () {
 Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
     $request->fulfill();
 
-    return redirect('/home');
+    return redirect('/dashboard');
 })->middleware(['auth', 'signed'])->name('verification.verify');
 
 Route::post('/email/verification-notification', function (Request $request) {

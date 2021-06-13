@@ -10,8 +10,7 @@ class OnlineSalonController extends Controller
         return view('online_salon');
     }
 
-    public function createProduct() {
-        $token = env('PAYPAL_SANDBOX_ACCESS_TOKEN', null);
+    public function getToken() {
         $clientId = env('PAYPAL_SANDBOX_CLIENT_ID', null);
         $secret = env('PAYPAL_SANDBOX_CLIENT_SECRET', null);
         $curl = curl_init();
@@ -19,7 +18,8 @@ class OnlineSalonController extends Controller
         curl_setopt($curl, CURLOPT_POST, true);
         curl_setopt($curl, CURLOPT_HTTPHEADER, [
             "Accept: application/json",
-            "Accept-Language: en_US"
+            "Accept-Language: en_US",
+            "Content-Type: application/x-www-form-urlencoded"
         ]);
         curl_setopt($curl, CURLOPT_USERPWD, $clientId.":".$secret);
         curl_setopt($curl, CURLOPT_POSTFIELDS, "grant_type=client_credentials");
@@ -27,26 +27,22 @@ class OnlineSalonController extends Controller
         curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false); // doesnt check ssl certs
         curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false); // doesnt check ssl certs
 
-        // curl_setopt($curl, CURLOPT_SSLVERSION , 6);
-
         $result = curl_exec($curl);
-        dd($result);
+        curl_close($curl);
 
-        // curl -v -X POST https://api-m.sandbox.paypal.com/v1/catalogs/products \
-        // -H "Content-Type: application/json" \
-        // -H "Authorization: Bearer EKTQACO6Gq7rt99Ep9_XhQkM2JWaxjP9EB03K9Hi1JAAR21EfhbHZDURxzyxunW4HfuXzmRlvjl85Qhp" \
-        // -H "PayPal-Request-Id: PRODUCT-18062020-001" \
-        // -d '{
-        // "name": "Video Streaming Service",
-        // "description": "A video streaming service",
-        // "type": "SERVICE",
-        // "category": "SOFTWARE",
-        // "image_url": "https://example.com/streaming.jpg",
-        // "home_url": "https://example.com/home"
-        // }'
+        $json = json_decode($result);
+        $token = $json->access_token;
+        return $token;
     }
 
-    public function paypalSubscriptionListener() {
+    public function createProduct() {
+        $token = $this->getToken();
+        dd($token);
+        $productId = "PROD-73B33072098394532";
+        $planId = "P-6B585188B5055922YMDCYACY";
+    }
 
+    public function paypalSubscriptionWebhookListener() {
+        dd('Hi I am in webhook listener');
     }
 }

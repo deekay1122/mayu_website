@@ -122,8 +122,8 @@ class ShopController extends Controller
         $subscription->subscriptionId = $subscriptionId;
         $subscription->user_id = $userId;
 
-        if ($subscription->save()) {
-            return redirect('/dashboard')->with('flash_message', 'Subscription activated successfully');
-        }
+        $subscription->save();
+        return redirect('/dashboard')->with('flash_message', 'Subscription activated successfully');
+        
     }
 }

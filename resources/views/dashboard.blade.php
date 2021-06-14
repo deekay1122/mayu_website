@@ -32,7 +32,7 @@
       onApprove: function(data, actions) {
           
         var subscriptionId = data.subscriptionID;
-        return actions.redirect(`http://127.0.0.1:8000/store_subscription?subscriptionID=${subscriptionId}`);
+        return actions.redirect(`https://mayu1111.com/store_subscription?subscriptionID=${subscriptionId}`);
         alert('Hi');
             // alert(data.subscriptionID);  You can add optional success message for the subscriber here
 

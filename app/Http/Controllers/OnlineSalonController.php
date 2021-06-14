@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Subscription;
 
 class OnlineSalonController extends Controller
 {
@@ -35,14 +36,26 @@ class OnlineSalonController extends Controller
         return $token;
     }
 
-    public function createProduct() {
-        $token = $this->getToken();
-        dd($token);
-        $productId = "PROD-73B33072098394532";
-        $planId = "P-6B585188B5055922YMDCYACY";
-    }
 
     public function paypalSubscriptionWebhookListener(Request $request) {
-        echo $request->resource["id"];
+        
+        $subscriptionId = $request->resource["id"];
+        $subscription = Subscription::all()->where('subscriptionId', $subscriptionId)->first();
+        echo $subscription;
+    }
+
+    public function storeSubscription(Request $request) {
+        $subscriptionId = $request->subscriptionID;
+
+        $user = auth()->user();
+        $userId = $user->id;
+
+        $subscription = new Subscription;
+        $subscription->subscriptionId = $subscriptionId;
+        $subscription->user_id = $userId;
+
+        if ($subscription->save()) {
+            return redirect('/dashboard')->with('flash_message', 'Subscription activated successfully');
+        }
     }
 }

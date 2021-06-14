@@ -15,6 +15,10 @@
     --main-span-color: antiquewhite;
 }
 
+.main_container {
+  margin-left: 5%;
+  margin-right: 5%;
+}
 
 /* Navigation bar */
 
@@ -116,8 +120,8 @@
     font-size: 3vh;
     text-align: center;
     margin-top: 50px;
-    margin-left: 50px;
-    margin-right: 50px;
+    /* margin-left: 50px; */
+    /* margin-right: 50px; */
     margin-bottom: 50px;
     justify-content: center;
   }
@@ -374,6 +378,7 @@
   }
   
   .btn i {
+    left: 0;
     font-size:1.2rem;
     border: 1px solid thistle;
     border-radius: 50%;
@@ -423,6 +428,12 @@
     padding-top: 9px;
     padding-bottom: 9px;
     padding-left: 11.5px;
+  }
+
+  @media screen and (max-width: 600px) {
+    .slider {
+        display: none;
+    }
   }
   /* ENd OF GALLERY SLIDESHOW  */
   .center-2 {

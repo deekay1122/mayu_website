@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Sale;
+use App\Models\Subscription;
 
 class ShopController extends Controller
 {
@@ -109,5 +110,20 @@ class ShopController extends Controller
         }
         session()->forget('cart');
         return redirect('/dashboard');
+    }
+
+    public function storeSubscription(Request $request) {
+        $subscriptionId = $request->subscriptionID;
+
+        $user = auth()->user();
+        $userId = $user->id;
+
+        $subscription = new Subscription;
+        $subscription->subscriptionId = $subscriptionId;
+        $subscription->user_id = $userId;
+
+        if ($subscription->save()) {
+            return redirect('/dashboard')->with('flash_message', 'Subscription activated successfully');
+        }
     }
 }

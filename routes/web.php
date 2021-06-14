@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\OnlineSalonController;
@@ -21,9 +22,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'showDashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
 require __DIR__.'/auth.php';
 
@@ -34,9 +33,13 @@ Route::get('/shop/remove_from_cart/{id}', [ShopController::class, 'removeFromCar
 Route::get('/shop/cart', [ShopController::class, 'showCart']);
 Route::get('/shop/checkout', [ShopController::class, 'showCheckout'])->middleware('auth');
 Route::get('/store_order', [ShopController::class, 'storeOrder'])->middleware('auth');
+Route::get('/store_subscription', [ShopController::class, 'storeSubscription'])->middleware('auth');
 
+
+// Online Salon
 Route::get('/online_salon', [OnlineSalonController::class, 'showOnlineSalon']);
 Route::get('/online_salon/createProduct', [OnlineSalonController::class, 'createProduct']);
+
 
 // email
 Route::get('/email/verify', function () {

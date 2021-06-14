@@ -4,12 +4,12 @@ const prev=document.querySelector('#prev')
 
 function handleScrollNext (direction) {
   const cards = document.querySelector('.card-content')
-  cards.scrollLeft=cards.scrollLeft += window.innerWidth / 2 > 600 ? window.innerWidth /2 : window.innerWidth -100
+  cards.scrollLeft=cards.scrollLeft += window.innerWidth / 2 > 600 ? window.innerWidth /4 : window.innerWidth -50
 }
 
 function handleScrollPrev (direction) {
   const cards = document.querySelector('.card-content')
-  cards.scrollLeft=cards.scrollLeft -= window.innerWidth / 2 > 600 ? window.innerWidth /2 : window.innerWidth -100
+  cards.scrollLeft=cards.scrollLeft -= window.innerWidth / 2 > 600 ? window.innerWidth /4 : window.innerWidth -50
 }
 
 prev.addEventListener('click', handleScrollNext)

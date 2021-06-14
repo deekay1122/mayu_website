@@ -130,7 +130,9 @@ class ShopController extends Controller
     public function paypalSubscriptionWebhookListener(Request $request) {
         
         $subscriptionId = $request->resource["id"];
+        $status = $request->resource["status"];
         $subscription = Subscription::all()->where('subscriptionId', $subscriptionId)->first();
-        echo $subscription;
+        $subscription->status = $status;
+        $subscription->save();
     }
 }

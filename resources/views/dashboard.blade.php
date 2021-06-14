@@ -20,9 +20,6 @@
         @else
             <p>参加中</p>
         @endif
-        @endif
-
-        
     </div>
 </div> 
 <script src="https://www.paypal.com/sdk/js?client-id={{ env('PAYPAL_SANDBOX_CLIENT_ID') }}&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script> 

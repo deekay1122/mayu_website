@@ -126,4 +126,11 @@ class ShopController extends Controller
         return redirect('/dashboard')->with('flash_message', 'Subscription activated successfully');
         
     }
+
+    public function paypalSubscriptionWebhookListener(Request $request) {
+        
+        $subscriptionId = $request->resource["id"];
+        $subscription = Subscription::all()->where('subscriptionId', $subscriptionId)->first();
+        echo $subscription;
+    }
 }

@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OnlineSalonController;
+use App\Http\Controllers\ShopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::middleware('api')->post('online_salon/webhook', [OnlineSalonController::class, 'paypalSubscriptionWebhookListener']);
+Route::middleware('api')->post('online_salon/webhook', [ShopController::class, 'paypalSubscriptionWebhookListener']);

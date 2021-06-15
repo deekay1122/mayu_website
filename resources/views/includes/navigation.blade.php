@@ -6,7 +6,7 @@
     </div>
     <div class="menu">
         <ul class="menu_list">
-            <li><a href="/shop">Shop</a></li>
+            <li><a href="/online_salon">Salon</a></li>
             <li><a href="/shop/cart">Cart
             @if (session('cart'))
                 @php

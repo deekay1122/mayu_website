@@ -64,27 +64,4 @@ class OnlineSalonController extends Controller
         $json = json_decode($result);
         return $json;
     }
-
-    public function storeSubscription(Request $request) {
-        $subscriptionId = $request->subscriptionID;
-
-        $planId = config('services.paypal.sandbox_subscription_plan_id');
-        
-        $user = auth()->user();
-        $userId = $user->id;
-
-        $subscription = new Subscription;
-        $subscription->subscriptionId = $subscriptionId;
-        $subscription->user_id = $userId;
-        $subscription->plan_id = "Yesss";
-
-        if ($subscription->save()) {
-            return redirect('/dashboard')->with('flash_message', 'Subscription activated successfully');
-        }
-    }
-
-    public function testAPI($id) {
-        $obj = config('services.paypal.sandbox_subscription_plan_id');
-        var_dump($obj);
-    }
 }

@@ -115,12 +115,15 @@ class ShopController extends Controller
     public function storeSubscription(Request $request) {
         $subscriptionId = $request->subscriptionID;
 
+        $planId = config('services.paypal.sandbox_subscription_plan_id');
+
         $user = auth()->user();
         $userId = $user->id;
 
         $subscription = new Subscription;
         $subscription->subscriptionId = $subscriptionId;
         $subscription->user_id = $userId;
+        $subscription->plan_id = $planId;
 
         $subscription->save();
         return redirect('/dashboard')->with('flash_message', 'Subscription activated successfully');

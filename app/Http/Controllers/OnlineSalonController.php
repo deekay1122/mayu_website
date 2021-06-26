@@ -49,8 +49,9 @@ class OnlineSalonController extends Controller
 
     public function getSubscriptionTitle(string $subscriptionId) {
         $token = $this->getToken();
+        
         $curl = curl_init();
-        curl_setopt($curl, CURLOPT_URL, "https://api-m.sandbox.paypal.com/v1/plans/$subscriptionId");
+        curl_setopt($curl, CURLOPT_URL, "https://api-m.sandbox.paypal.com/v1/billing/plans/$subscriptionId");
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($curl, CURLOPT_HTTPHEADER, [
             "Accept: application/json",
@@ -61,22 +62,29 @@ class OnlineSalonController extends Controller
         curl_close($curl);
 
         $json = json_decode($result);
+        return $json;
     }
 
     public function storeSubscription(Request $request) {
         $subscriptionId = $request->subscriptionID;
 
-        $title = $this->getSubscriptionTitle($subscriptionId);
-        dd($title);
+        $planId = config('services.paypal.sandbox_subscription_plan_id');
+        
         $user = auth()->user();
         $userId = $user->id;
 
         $subscription = new Subscription;
         $subscription->subscriptionId = $subscriptionId;
         $subscription->user_id = $userId;
+        $subscription->plan_id = $planId;
 
         if ($subscription->save()) {
             return redirect('/dashboard')->with('flash_message', 'Subscription activated successfully');
         }
+    }
+
+    public function testAPI($id) {
+        $obj = config('services.paypal.sandbox_subscription_plan_id');
+        var_dump($obj);
     }
 }

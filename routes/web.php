@@ -40,6 +40,7 @@ Route::get('/store_subscription', [ShopController::class, 'storeSubscription'])-
 Route::get('/book_club', [OnlineSalonController::class, 'showBookClub']);
 Route::get('/subscribe/book_club', [OnlineSalonController::class, 'showSubscribeBookClub'])->middleware('auth');
 Route::get('/online_salon/createProduct', [OnlineSalonController::class, 'createProduct']);
+Route::get('/online_salon/test/{id}', [OnlineSalonController::class, 'testAPI']);
 
 
 // email

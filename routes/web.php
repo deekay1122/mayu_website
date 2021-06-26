@@ -37,7 +37,7 @@ Route::get('/store_subscription', [ShopController::class, 'storeSubscription'])-
 
 
 // Online Salon
-Route::get('/online_salon', [OnlineSalonController::class, 'showOnlineSalon']);
+Route::get('/book_club', [OnlineSalonController::class, 'showBookClub']);
 Route::get('/online_salon/createProduct', [OnlineSalonController::class, 'createProduct']);
 
 

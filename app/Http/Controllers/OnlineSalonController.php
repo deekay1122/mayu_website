@@ -7,8 +7,8 @@ use App\Models\Subscription;
 
 class OnlineSalonController extends Controller
 {
-    public function showOnlineSalon() {
-        return view('online_salon');
+    public function showBookClub() {
+        return view('book_club');
     }
 
     public function getToken() {

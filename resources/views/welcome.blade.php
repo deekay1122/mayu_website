@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-
+@section('title', "Mayu's Web")
 @section('content')
 
 <div class="flex-container">

@@ -1,4 +1,5 @@
 @extends('layouts.layout')
+@section('title', 'Dashboard')
 @section('content')
 <div class="your_items">
     <p>オンラインサロン参加状況</p>

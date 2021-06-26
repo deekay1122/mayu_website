@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-
+@section('title', 'Cart')
 @section('content')
 @if (!session('cart'))
     <h1>No items in cart</h1>

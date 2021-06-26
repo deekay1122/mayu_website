@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-
+@section('title', 'Book Club')
 @section('content')
   <div class="book_club_title">
     Mayu ブッククラブ

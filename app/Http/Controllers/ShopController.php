@@ -122,7 +122,7 @@ class ShopController extends Controller
 
         $existingSubscription = Subscription::all()->where('user_id', $userId)->where('plan_id', $planId)->first();
 
-        dd($existingSubscription);
+        dd($existingSubscription->plan_id);
         $subscription = new Subscription;
         $subscription->subscriptionId = $subscriptionId;
         $subscription->user_id = $userId;

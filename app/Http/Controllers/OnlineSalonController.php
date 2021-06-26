@@ -76,7 +76,7 @@ class OnlineSalonController extends Controller
         $subscription = new Subscription;
         $subscription->subscriptionId = $subscriptionId;
         $subscription->user_id = $userId;
-        $subscription->plan_id = $planId;
+        $subscription->plan_id = "Yesss";
 
         if ($subscription->save()) {
             return redirect('/dashboard')->with('flash_message', 'Subscription activated successfully');

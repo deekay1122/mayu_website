@@ -2,22 +2,24 @@
 @section('title', 'Dashboard')
 @section('content')
 <div class="your_items">
-    <p>オンラインサロン参加状況</p>
-    <div class="online_salon_status">
+    <p>ブッククラブ参加状況</p>
+    <div class="subscription_status">
         @if ($subscription == null)
-            <p>未参加　下記ボタンからお申し込みください</p>
-            <div class="paypal_subscription_container">
+            <p>未参加　下記リンクからお申し込みください</p>
+            <a href="subscribe/book_club">ブッククラブお申し込み</a>
+            {{-- <div class="paypal_subscription_container">
                 <div class="paypal_subscription" id="paypal-button-container"></div>
-            </div>        
+            </div>         --}}
         @elseif ($subscription->status == null or $subscription->status == "APPROVAL_PENDING" or $subscription->status == "APPROVED")
             <p>参加お申し込みの処理中</p>
         @elseif ($subscription->status == "SUSPENDED")
             <p>参加は停止中です。管理者にお問い合わせください。</p>
         @elseif ($subscription->status == "CANCELLED")
             <p>参加はキャンセルされております。再度お申し込みください。</p>
-            <div class="paypal_subscription_container">
+            <a href="subscribe/book_club">ブッククラブお申し込み</a>
+            {{-- <div class="paypal_subscription_container">
                 <div class="paypal_subscription" id="paypal-button-container"></div>
-            </div> 
+            </div>  --}}
         @else
             <p>参加中</p>
         @endif

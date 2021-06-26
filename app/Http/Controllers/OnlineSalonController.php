@@ -11,9 +11,13 @@ class OnlineSalonController extends Controller
         return view('book_club');
     }
 
+    public function showSubscribeBookClub() {
+        return view('subscribe_book_club');
+    }
+
     public function getToken() {
-        $clientId = env('PAYPAL_SANDBOX_CLIENT_ID', null);
-        $secret = env('PAYPAL_SANDBOX_CLIENT_SECRET', null);
+        $clientId = config('services.paypal.sandbox_client_id');
+        $secret = config('services.paypal.sandbox_client_secret');
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, "https://api-m.sandbox.paypal.com/v1/oauth2/token");
         curl_setopt($curl, CURLOPT_POST, true);
@@ -38,15 +42,32 @@ class OnlineSalonController extends Controller
 
 
     public function paypalSubscriptionWebhookListener(Request $request) {
-        
         $subscriptionId = $request->resource["id"];
         $subscription = Subscription::all()->where('subscriptionId', $subscriptionId)->first();
         echo $subscription;
     }
 
+    public function getSubscriptionTitle(string $subscriptionId) {
+        $token = $this->getToken();
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, "https://api-m.sandbox.paypal.com/v1/plans/$subscriptionId");
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, [
+            "Accept: application/json",
+            "Authorization: Bearer $token"
+        ]);
+
+        $result = curl_exec($curl);
+        curl_close($curl);
+
+        $json = json_decode($result);
+    }
+
     public function storeSubscription(Request $request) {
         $subscriptionId = $request->subscriptionID;
 
+        $title = $this->getSubscriptionTitle($subscriptionId);
+        dd($title);
         $user = auth()->user();
         $userId = $user->id;
 

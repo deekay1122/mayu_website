@@ -120,6 +120,9 @@ class ShopController extends Controller
         $user = auth()->user();
         $userId = $user->id;
 
+        $existingSubscription = Subscription::all()->where('user_id', $userId)->where('plan_id', $planId)->first();
+
+        dd($existingSubscription);
         $subscription = new Subscription;
         $subscription->subscriptionId = $subscriptionId;
         $subscription->user_id = $userId;

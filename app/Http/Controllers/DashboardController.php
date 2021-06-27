@@ -11,11 +11,9 @@ class DashboardController extends Controller
         $user = auth()->user();
         $userId = $user->id;
         $subscription = Subscription::all()->where('user_id', $userId)->first();
-    
+        dd($subscription);    
         return view('dashboard', [
             'subscription' => $subscription
         ]);
     }
-
-    
 }

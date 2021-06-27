@@ -120,15 +120,16 @@ class ShopController extends Controller
         $user = auth()->user();
         $userId = $user->id;
 
-        $existingSubscription = Subscription::all()->where('user_id', $userId)->where('plan_id', $planId)->first();
+        // $existingSubscription = Subscription::all()->where('user_id', $userId)->where('plan_id', $planId);
 
-        if ($existingSubscription->plan_id == $planId) {
-            if ($existingSubscription->status == "CANCELLED") {
-                $existingSubscription->status = "SILENCED";
-                $existingSubscription->save();
-            }
-        }
-        
+        // dd($existingSubscription);
+        // if ($existingSubscription->plan_id == $planId) {
+        //     if ($existingSubscription->status == "CANCELLED") {
+        //         $existingSubscription->status = "SILENCED";
+        //         $existingSubscription->save();
+        //     }
+        // }
+
         $subscription = new Subscription;
         $subscription->subscriptionId = $subscriptionId;
         $subscription->user_id = $userId;

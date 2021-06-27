@@ -19,7 +19,7 @@
       createSubscription: function(data, actions) {
         return actions.subscription.create({
           /* Creates the subscription */
-          plan_id: "{{ config('services.paypal.sandbox_subscription_plan_id') }}"
+          plan_id: "{{ config('services.paypal.sandbox_book_club_monthly_subscription_plan_id') }}"
           
         });
       },

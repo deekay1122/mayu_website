@@ -115,14 +115,14 @@ class ShopController extends Controller
     public function storeSubscription(Request $request) {
         $subscriptionId = $request->subscriptionID;
 
-        $planId = config('services.paypal.sandbox_subscription_plan_id');
+        $planId = config('services.paypal.sandbox_book_club_monthly_subscription_plan_id');
 
         $user = auth()->user();
         $userId = $user->id;
 
-        // $existingSubscription = Subscription::all()->where('user_id', $userId)->where('plan_id', $planId);
+        $existingSubscription = Subscription::all()->where('user_id', $userId)->where('plan_id', $planId);
 
-        // dd($existingSubscription);
+        dd($existingSubscription);
         // if ($existingSubscription->plan_id == $planId) {
         //     if ($existingSubscription->status == "CANCELLED") {
         //         $existingSubscription->status = "SILENCED";

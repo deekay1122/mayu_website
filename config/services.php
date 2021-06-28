@@ -41,6 +41,7 @@ return [
         'sandbox_client_id' => env('PAYPAL_SANDBOX_CLIENT_ID'),
         'sandbox_client_secret' => env('PAYPAL_SANDBOX_CLIENT_SECRET'),
         'sandbox_book_club_monthly_subscription_plan_id' => env('PAYPAL_SANDBOX_BOOK_CLUB_MONTHLY_SUBSCRIPTION_PLAN_ID'),
+        'sandbox_book_club_zoom_monthly_subscription_plan_id' => env('PAYPAL_SANDBOX_BOOK_CLUB_ZOOM_MONTHLY_SUBSCRIPTION_PLAN_ID'),
         'live_client_id' => env('PAYPAL_LIVE_CLIENT_ID'),
         'live_client_secret' => env('PAYPAL_LIVE_CLIENT_SECRET'),
         'currency' => env('PAYPAL_CURRENCY'),

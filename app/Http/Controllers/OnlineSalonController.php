@@ -14,6 +14,10 @@ class OnlineSalonController extends Controller
     public function showSubscribeBookClub() {
         return view('subscribe_book_club');
     }
+    
+    public function showSubscribeBookClubZoom() {
+        return view('subscribe_book_club_zoom');
+    }
 
     public function getToken() {
         $clientId = config('services.paypal.sandbox_client_id');

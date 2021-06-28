@@ -1,10 +1,10 @@
 @extends('layouts.layout')
-@section('title', 'Subscribe Book Club')
+@section('title', 'Subscribe Book Club Zoom')
 @section('content')
 <div class="subscription_title">
   <p>
-    ブッククラブ（対面）のご購入 <br>
-    10,000円（月額）
+    ブッククラブ（Zoom）のご購入 <br>
+    3,000円（月額）
   </p>  
 </div>
 <div class="paypal_subscription_container">
@@ -22,7 +22,7 @@
       createSubscription: function(data, actions) {
         return actions.subscription.create({
           /* Creates the subscription */
-          plan_id: "{{ config('services.paypal.sandbox_book_club_monthly_subscription_plan_id') }}",
+          plan_id: "{{ config('services.paypal.sandbox_book_club_zoom_monthly_subscription_plan_id') }}",
           starttime: "2021-08-01T00:00:00Z"
           
         });

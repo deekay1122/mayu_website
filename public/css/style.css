@@ -16,48 +16,59 @@
 }
 
 .main_container {
-  margin-left: 5%;
-  margin-right: 5%;
+    margin-top: 15%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
+
+
 
 /* Navigation bar */
 
 .navigation_container {
-    display: flex;
+    width: 100%;
     height: 100px;
+    display: flex;
     align-items: center;
-    justify-items: center;
-    overflow: hidden;
-    /* position: fixed; */
 }
 
 .logo {
-    width: 50px;
+    width: auto;
     height: 50px;
     margin-left: 3%;
-    display: flex;
-    align-items: center;
+    text-decoration: none;
+    color: var(--main-black-font-color);
 }
 
-.menu {
+.navigation_container ul {
+    width: auto;
     margin-left: auto;
     margin-right: 3%;
-}
-
-.menu_list {
-    margin: auto;
-    /* background-color: blue; */
     display: flex;
     list-style: none;
 }
 
-.menu_list li {
-    margin-left: 25px;
+
+
+.navigation_container li {
+    padding-left: 30px;
+    width: auto;
 }
 
-.menu_list a {
+.menu a {
     text-decoration: none;
     color: var(--main-black-font-color);
+}
+
+@media (max-width: 800px) {
+    .navigation_container li a {
+      font-size: 20px;
+    }
+
+}
+
+.logout_link {
+    cursor: pointer;
 }
 
 .menu_list span {
@@ -75,7 +86,7 @@
 
 #userManagement > .dropdown > .dropdownMargin {
     margin-top: 10px;
-    margin-left: 0px;
+    margin-left: 30px;
     background-color: lightgray;
 }
 
@@ -90,6 +101,47 @@
     display: block;
     animation: show 0.3s linear 0s;
 }
+
+/* Navigation Hamburger */
+
+/* .menu-hamburger-wrap {
+    margin-left: auto;
+}
+
+.menu-hamburger-wrap .toggler {
+    width: 150px;
+    height: 150px;
+}
+
+.menu-hamburger-wrap .hamburger {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.menu-hamburger-wrap .hamburger > div {
+    width: 100%;
+    height: 2px;
+    background-color: rgb(8, 8, 8);
+}
+
+.menu-wrap-hamburger .hamburger > div:before,
+.menu-wrap-hamburger .hamburger > div:after {
+    position: absolute;
+    content: '';
+    top: -10px;
+    width: 100%;
+    height: 2px;
+    background-color: inherit;
+} */
+
+
+  
+
 
 /* Message */
 .message {
@@ -124,22 +176,22 @@
     /* margin-right: 50px; */
     margin-bottom: 50px;
     justify-content: center;
-  }
+}
   
-  .header {
+.header-img {
     padding: 10px;
     flex: 50%;
-  }
+}
   
-  .m-o-s {
+.m-o-s {
     padding: 20px;
     flex: 50%;
     float: left;
     font-size: 3vh;
     color: thistle;
     
-  }
-  .m-o-s h1{
+}
+.m-o-s h1 {
     margin-top: 20%;
     margin-bottom: 10%;
     font-size: 3vh;
@@ -150,9 +202,8 @@
     width: 50%;
     text-align: center;
     margin-left: 25%;
-  }
-  .about p
-  {
+}
+.about p {
       margin: 0 auto;
       border-bottom: solid 1px;
       width: 75%;
@@ -160,15 +211,16 @@
       color: thistle;
       margin-top: 0%;
       padding: 20px;
-  }
+}
   /* Responsive layout - makes a one column-layout instead of two-column layout */
-  @media (max-width: 800px) {
+@media (max-width: 800px) {
     .flex-container {
       flex-direction: column;
-   }
-  }
+    }
+
+}
   /* Create three equal columns that floats next to each other */
-  .column {
+.column {
     text-align: center;
     margin: auto;
     display: center;
@@ -176,26 +228,27 @@
     width: 33.33%;
     padding: 0px;
     height: 300px; /* Should be removed. Only for demonstration */
-  }
-  .row{
+}
+.row{
     margin-left: 20%;
     margin-right: 20%;
-  }
+}
   
   /* Clear floats after the columns */
-  .row:after {
+.row:after {
     content: "";
     display: table;
     clear: both;
-  }
+}
   
   /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
     .column {
         width: 100%;
     }
-  }
-  .about-mayu{
+}
+  
+.about-mayu{
     margin-top: 150px;
     display: block; 
     margin: 0 auto; 
@@ -205,24 +258,28 @@
     width: 33.33%;
       padding: 10px;
       height: 300px; 
-  }
-  .about-mayu h2{
+}
+  
+.about-mayu h2{
     border-bottom:1px solid thistle;
     font-size: 3vh;
-  }
-  .about-mayu p{
+}
+  
+.about-mayu p{
     font-size: 3vh;
-    }
-    .list-unstyled {
+}
+    
+.list-unstyled {
       padding-left: 0;
       list-style: none;
-    }
-    .list-inline li {
+}
+    
+.list-inline li {
       display: inline-block;
       padding-left: 0px;
-    }
-    .social-icons .fa-youtube-play
-    {
+}
+    
+.social-icons .fa-youtube-play {
       font-size: 1.2em;
       color: white;
       line-height: 30px;
@@ -231,9 +288,9 @@
       width: 50px;
       background-color: thistle;
       border-radius: 40px/50px;
-    }
-    .social-icons .fa-instagram
-  {
+}
+    
+.social-icons .fa-instagram {
       font-size: 1.2em;
     color: thistle;
     line-height: 30px;
@@ -243,23 +300,27 @@
     background-color: white;
     border-radius: 40px/50px;
     
-  }
-  .fa:hover, .fa:active {
+}
+  
+.fa:hover, .fa:active {
       -webkit-transform: scale(1.1) rotate(360deg);
       -moz-transform: scale(1.1) rotate(360deg);
       -ms-transform: scale(1.1) rotate(360deg);
       -o-transform: scale(1.1) rotate(360deg);
       transform: scale(1.1) rotate(360deg);
-  }
-  .avatar{
+}
+  
+.avatar{
     text-align: center;
-  }
-  .avatar img {
+}
+  
+.avatar img {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-  }
-  .center {
+}
+  
+.center {
     text-align: center;
     margin: auto;
     margin-top: 30px;
@@ -267,10 +328,10 @@
     border: 1px solid thistle;
     background-color: thistle;
     padding: 10px;
-  }
+}
   /* GALLERY SAMPLE */
   
-  .card {
+.card {
     min-width: 300px;
     height: 56vh;
     border: 2px solid thistle;
@@ -279,62 +340,65 @@
     cursor:pointer;
     transition: all .25s ease;
   
-  }
+}
   
-  .card:hover { 
+.card:hover { 
     transform:translate(0, -10px);
     box-shadow: 0px 17px 35px 0px rgba(0,0,0,.07);
-  }
-  .card .card-text {
+}
+  
+.card .card-text {
     padding: 10px;
-  }
-  .card h2{
+}
+  
+.card h2{
     text-align: center;
     font-family: 'Caveat';
     font-size: 1.2em;
-  }
-  p {
+}
+  
+p {
     font-size: .9rem;
     opacity: .6;
     margin-top: 10px;
     text-align: center;
-  }
+}
   
-  .card .card-img {
+.card .card-img {
     transform: translate(90px,-10px);
     margin: 10px 30px;
     display:flex;
     align-items: center;
     justify-content:center;
     transition: all .35s ease-out;
-  }
+}
   
-  .card img {
+.card img {
     height:150px;
     margin-top: 30px;
     margin-right: 250px; margin-left: 50px;
-  }
+}
   
-  .card img.blur {
+.card img.blur {
     position:absulute;
     filter:blur(15px);
     z-index:-1;
     opacity:.40;
     transform: translate(-160px,30px);
     transition: all .35s ease-out;
-  }
+}
   
-  .card:hover .card-img { 
+.card:hover .card-img { 
     transform:translate(70px,-15px);
-  }
+}
   
-  .card:hover .card-img img.blur {
+.card:hover .card-img img.blur {
     transform:translate(-100px,35px) scale(.85);
     opacity:.25;
     filter:blur(20px);
-  }
+}
   
-  .card-content {
+.card-content {
     display:flex;
     align-items:center;
     justify-content:flex-start;
@@ -344,21 +408,21 @@
     padding-left:47px;
     padding-right: 47px;
     scroll-behavior:smooth;
-  }
+}
   
-  .card-content::-webkit-scrollbar {
+.card-content::-webkit-scrollbar {
      height:0px;
-  }
+}
   
-  .card-content:after {
+.card-content:after {
     content:'';
     display:block;
     min-width:80px;
     height:0px;
     position:relative;
-  }
+}
   
-  .btn{
+.btn{
     text-align: center;
     min-width:100px;
     margin:auto 30px;
@@ -371,13 +435,13 @@
     cursor:pointer;
     z-index:9999;
     transition: all .25s ease;
-  }
+}
   
-  .btn:hover{
+.btn:hover{
     box-shadow: none;
-  }
+}
   
-  .btn i {
+.btn i {
     left: 0;
     font-size:1.2rem;
     border: 1px solid thistle;
@@ -386,9 +450,9 @@
     display: inline-block;
     padding: 20px 30px;
   
-  }
+}
   
-  .slider {
+.slider {
     display:flex;
     align-items:center;
     justify-content:center;
@@ -396,9 +460,9 @@
     width:100%;
     height:85vh;
     overflow:hidden;
-  }
+}
   
-  .slider:after {
+.slider:after {
     content:'';
     left:50px;
     height:90vh;
@@ -407,9 +471,9 @@
     z-index:100;
     background: none;
     pointer-events:none;
-  }
+}
   
-  .slider:before {
+.slider:before {
     content:'';
     right:50px;
     height:90vh;
@@ -418,8 +482,9 @@
     z-index:100;
     background: none;
     pointer-events:none;
-  }
-  .fa-angle-left{
+}
+  
+.fa-angle-left{
     color: grey;
     font-size: 1em;
     border: 1px solid grey;
@@ -428,15 +493,17 @@
     padding-top: 9px;
     padding-bottom: 9px;
     padding-left: 11.5px;
-  }
+}
 
-  @media screen and (max-width: 600px) {
+  
+@media screen and (max-width: 600px) {
     .slider {
         display: none;
     }
-  }
+}
   /* ENd OF GALLERY SLIDESHOW  */
-  .center-2 {
+  
+.center-2 {
     text-align: center;
     border-radius: 10px 10px 10px 10px;
     margin: auto;
@@ -444,23 +511,26 @@
     width: 60%;
     border: 1px solid thistle;
     padding: 5px;
-  }
+}
   /******************************
   PLAY-BUTTON
   ******************************/
-  .play-button {
+.play-button {
     margin-left: 20%;
     margin-right: 20%;
     color: grey;
     text-align: center;
-  }
-  .play-button a {
+}
+  
+.play-button a {
     border-radius:50%
-    }
-  .play-button a:hover{
+}
+  
+.play-button a:hover{
       text-shadow: 0px 0px 10px yellow;
-  }
-  .fa-play{
+}
+  
+.fa-play{
     margin-left: 30px;
     color: grey;
     font-size: 1em;
@@ -470,9 +540,10 @@
     padding-top: 9px;
     padding-bottom: 9px;
     padding-left: 11.5px;
-  }
+}
   /* END OF PLAY-BUTTON */
-  .center-3 {
+  
+.center-3 {
     text-align: center;
     margin: auto;
     margin-top: 30px;
@@ -480,26 +551,31 @@
     border: 1px solid thistle;
     background-color: thistle;
     padding: 5px;
-  }
+}
 
-  /* Online Salon */
+  /* Online Salon & Book Club Purchase */
 
-  .paypal_subscription_container {
+.subscription_title {
+    margin-bottom: 30px;
+}
+
+.paypal_subscription_container {
     display: flex;
     justify-content: center;
-  }
+}
 
-  .paypal_subscription {
+.paypal_subscription {
     width: 300px;
-  }
+}
   
-  footer a{
+footer a{
     color: white;
     text-decoration: none;
     border-bottom: 1px solid white;
     border-bottom-width: thin;
-  }
-  footer ul {
-    list-style: none;
-  }
+}
   
+footer ul {
+    list-style: none;
+}
+ 

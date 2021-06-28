@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="flex-container">
-    <div class="header">
+    <div class="header-img">
         <img src="images/0.jpg" alt="">
     </div>
     <div class="m-o-s">

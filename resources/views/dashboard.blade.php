@@ -29,7 +29,7 @@
                 <p>参加中</p>
         @endswitch
     </div>
-        @if ($bookClubZoomPlanStatus != "ACTIVE" && $bookClubPlanStatus != "APPROVAL_PENDING" && $bookClubPlanStatus != "APPROVED")
+        @if ($bookClubPlanStatus != "ACTIVE" && $bookClubPlanStatus != "APPROVAL_PENDING" && $bookClubPlanStatus != "APPROVED")
             <p>ブッククラブ（Zoom）参加状況</p>
             <div class="subscription_status">
                 @switch($bookClubZoomPlanStatus)

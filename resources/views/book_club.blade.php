@@ -46,6 +46,7 @@
   </div>
   
     <div>
+      お申し込みは
       <a href="dashboard">ダッシュボードにログイン</a>
     </div>
 @endsection

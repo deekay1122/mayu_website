@@ -19,7 +19,7 @@
             <span>{{ $cartTotalQty }}</span>
         @endif
         </a></li> --}}
-        <div id="userManagement">
+        <div id="userManagement" ontouchstart="">
             @if (auth()->user())
             <li><a href="/">Welcome {{ auth()->user()->name }}</a></li>
             @else

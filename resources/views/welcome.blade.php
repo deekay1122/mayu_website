@@ -3,9 +3,9 @@
 @section('content')
 
 <div class="flex-container">
-    {{-- <div class="header-img">
+    <div class="header-img">
         <img src="images/0.jpg" alt="">
-    </div> --}}
+    </div>
     <div class="m-o-s">
         <h1>mayu official site</h1>
         <div class="about">

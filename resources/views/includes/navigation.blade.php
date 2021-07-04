@@ -1,11 +1,14 @@
 
 
 <div class="navigation_container">
-    <a href="/" class="logo">
-        Mayu's Website
-    </a>
+    <div class="logo">
+        <a href="/" class="logo">
+            Mayu's Website
+        </a>
+        
+    </div>
     <ul class="menu">
-        <li><a href="/book_club">Book Club</a></li>
+        <li><a href="/book_club"><i class="fa fa-bookmark-o"></i>Book Club</a></li>
         {{-- <li><a href="/shop/cart">Cart
         @if (session('cart'))
             @php

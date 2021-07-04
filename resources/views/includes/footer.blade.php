@@ -1,5 +1,5 @@
 <!-- Added footer -->
-<div class="footer">
+<div class="inclued_footer">
     <div class="social">
       <a href="#"><i class="fa fa-instagram"></i></a>
       <a href="#"><i class="fa fa-youtube"></i></a>

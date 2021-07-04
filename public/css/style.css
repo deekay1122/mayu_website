@@ -405,18 +405,18 @@
 /* End of page */
 
 /* Added footer */
-.footer {
+.inclued_footer {
     background-color: rgb(225, 214, 214);
     margin-top: 5%;
     padding:40px 0;
     color:#4b4c4d;
   }
-.footer .social .list-inline{
+.inclued_footer .social .list-inline{
     text-decoration: none;
     list-style: none;
 }
   
-  .footer ul {  
+  .inclued_footer ul {  
     padding:0;
     text-align:center;
     font-size:18px;
@@ -424,30 +424,30 @@
     margin-bottom:0;
   }
   
-  .footer li {
+  .inclued_footer li {
     padding:0 10px;
     color:black;
   }
   
-  .footer ul a {
+  .inclued_footer ul a {
     text-decoration: none;
     list-style: none;
     color:inherit;
     opacity:0.8;
   }
   
-  .footer ul a:hover {
+  .inclued_footer ul a:hover {
     opacity:1;
   }
   
-  .footer .social {
+  .inclued_footer .social {
     list-style: none;
     text-decoration: none;
     text-align:center;
     padding-bottom:25px;
   }
   
-  .footer .social a {
+  .inclued_footer .social a {
     list-style: none;
     text-decoration: none;
     font-size:24px;
@@ -461,11 +461,11 @@
     opacity:0.75;
   }
   
-  .footer .social > a:hover {
+  .inclued_footer .social > a:hover {
     opacity:0.9;
   }
   
-  .footer .copyright {
+  .inclued_footer .copyright {
     margin-top:15px;
     text-align:center;
     font-size:13px;

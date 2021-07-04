@@ -241,7 +241,7 @@
 
 
 /* Added section and content div */
-.section{
+section{
     position: relative;
     width: 100%;
     min-height: 100vh;
@@ -253,7 +253,7 @@
     linear-gradient(to right bottom, 
      rgba(220, 188, 224, 0.8),
      rgba(73, 67, 73, 0.315)),
-     url('201827339_948534845931901_8720808898116100300_n.jpg');
+     url('../images/book5.jpeg');
      clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); 
   }
   

@@ -29,7 +29,7 @@
 <!-- End of header -->
 
 <!-- Added section and content class -->
-<section class="section">
+<section>
   <div class="content">
     <div class="info">
       <div class="book_club_audiences">
